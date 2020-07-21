@@ -27,15 +27,3 @@ export class Vector {
         return dist
     }
 }
-
-function foo(a: string, b: number, c: number)
-function foo(a: number, b: string)
-function foo(a: string | number, b: string | number) {
-
-}
-
-foo("bar", 12, 21);
-// foo(12, 12);
-// foo("bar", "baz");
-foo(12, "bar");
-

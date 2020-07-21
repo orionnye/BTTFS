@@ -74,14 +74,14 @@ export default class Grid {
         }
         return false
     }
-    cellsAround(point: Vector) {
+    bodiesAround(point: Vector) {
         let cells = []
         for (let r = point.y - 1; r <= point.y + 1; r++) {
             for (let c = point.x - 1; c <= point.x + 1; c++) {
                 //if valid return cell vector or TILE
                 let currentIndex = new Vector(c, r)
                 if (this.containsCell(currentIndex)) {
-                    cells.push(this.content[r][c])
+                    cells.push(this.content[r][c].body)
                 }
             }
         }

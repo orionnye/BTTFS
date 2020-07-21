@@ -44,7 +44,7 @@ export function drawPhantomGrid(pos: Vector, dimensions: Vector, size: Vector, c
             let currentPos = new Vector(pos.x + indexC * tileSize.x, pos.y + indexR * tileSize.y)
             strokeRect(currentPos, tileSize)
             //type definition
-            drawCircle(tile.body.pos.add(pos), tile.body.radius, "rgba(30, 30, 30, 0.5)")
+            drawCircle(tile.body.pos.add(pos), tile.body.radius, "rgba(10, 50, 20, 0.8)")
             //numbers
             if (numbered) {
                 let textPos = new Vector(pos.x + indexC * tileSize.x - tileSize.x / 3.3, pos.y + indexR * tileSize.y)
@@ -84,4 +84,11 @@ export function drawText(pos: Vector, size: number, text: string, color: string 
     c.fillStyle = color
     c.font = size + "px Times New Roman"
     c.fillText(text, pos.x + size, pos.y + size)
+}
+export function drawImage(imageSrc: string, location : Vector) {
+    let loader: HTMLImageElement = new Image();
+    loader.src = imageSrc;
+    loader.onload = () => {
+        c.drawImage(loader, location.x, location.y, 200, 200)
+    }
 }
